@@ -38,7 +38,6 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Стиль для фото */
         .profile-img {
             width: 100px;
             height: 100px;
@@ -52,21 +51,29 @@
         h1 {
             font-size: 26px;
             font-weight: 600;
-            margin-bottom: 30px;
-            margin-top: 0;
+            margin-bottom: 5px;
             letter-spacing: -0.5px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin: 25px 0 15px;
+            font-weight: 700;
         }
 
         .links-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .link-card {
             background: var(--card-bg);
-            border-radius: 22px;
-            padding: 20px;
+            border-radius: 20px;
+            padding: 18px;
             text-decoration: none;
             color: var(--text-color);
             display: flex;
@@ -81,35 +88,44 @@
         .link-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--hover-shadow);
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        /* Особый стиль для кнопки Проекта */
+        .project-card {
+            background: #000;
+            color: #fff;
+        }
+        
+        .project-card:hover {
+            background: #1d1d1f;
         }
 
         .link-card i {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 8px;
         }
 
         .link-card span {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 16px;
         }
 
-        .wallet-address {
+        .sub-text {
             font-size: 10px;
             color: #888;
-            word-break: break-all;
-            margin-top: 8px;
+            margin-top: 5px;
             font-family: monospace;
-            max-width: 80%;
         }
 
         .fa-telegram { color: #24A1DE; }
-        .fa-tiktok { color: #000000; }
+        .fa-tiktok { color: #000; }
         .fa-credit-card { color: #21a038; }
         .fa-ethereum { color: #627eea; }
 
         #copy-toast {
             visibility: hidden;
-            min-width: 220px;
+            min-width: 200px;
             background-color: #1d1d1f;
             color: #fff;
             text-align: center;
@@ -121,21 +137,16 @@
             z-index: 100;
         }
 
-        #copy-toast.show {
-            visibility: visible;
-            animation: fadeInUp 0.4s, fadeOut 0.4s 2.6s;
-        }
-
-        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        #copy-toast.show { visibility: visible; animation: fadeInUp 0.4s; }
 
         .footer {
-            margin-top: 40px;
-            font-size: 13px;
+            margin-top: 50px;
+            font-size: 12px;
             color: #888;
         }
 
         .footer a {
-            color: #1d1d1f;
+            color: #000;
             text-decoration: none;
             font-weight: 600;
         }
@@ -145,30 +156,39 @@
 
     <div class="container">
         <img src="ava.png" alt="dqmjrka" class="profile-img">
-        
         <h1>dqmjrka</h1>
 
+        <div class="section-title">Проекты</div>
+        <div class="links-wrapper">
+            <a href="https://esign.ttdq.pro" target="_blank" class="link-card project-card">
+                <i class="fas fa-code"></i>
+                <span>ESIGN</span>
+            </a>
+        </div>
+
+        <div class="section-title">Социальные сети</div>
         <div class="links-wrapper">
             <a href="https://t.me/yxo42" target="_blank" class="link-card">
                 <i class="fab fa-telegram"></i>
                 <span>Telegram</span>
             </a>
-
             <a href="https://tiktok.com/@dqmir1111" target="_blank" class="link-card">
                 <i class="fab fa-tiktok"></i>
                 <span>TikTok</span>
             </a>
+        </div>
 
-            <div class="link-card" onclick="copyValue('2202206393709519', 'Номер карты скопирован!')">
+        <div class="section-title">Поддержать</div>
+        <div class="links-wrapper">
+            <div class="link-card" onclick="copyValue('2202206393709519', 'Карта скопирована!')">
                 <i class="fas fa-credit-card"></i>
-                <span>Поддержать (Сбер)</span>
-                <span class="wallet-address">2202 2063 9370 9519</span>
+                <span>СберБанк</span>
+                <span class="sub-text">2202 2063 9370 9519</span>
             </div>
-
-            <div class="link-card" onclick="copyValue('UQBIqIC5kiIObZkmV1desel7UxQA-3-f7yOmrYnkMRrmyxXl', 'Адрес кошелька скопирован!')">
+            <div class="link-card" onclick="copyValue('UQBIqIC5kiIObZkmV1desel7UxQA-3-f7yOmrYnkMRrmyxXl', 'Кошелек скопирован!')">
                 <i class="fab fa-ethereum"></i>
-                <span>Crypto Wallet (TON)</span>
-                <span class="wallet-address">UQBIqIC5...MRrmyxXl</span>
+                <span>TON Wallet</span>
+                <span class="sub-text">UQBIqIC5...MRrmyxXl</span>
             </div>
         </div>
 
@@ -185,7 +205,7 @@
                 const toast = document.getElementById("copy-toast");
                 toast.innerText = message;
                 toast.className = "show";
-                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+                setTimeout(() => { toast.className = ""; }, 3000);
             });
         }
     </script>
