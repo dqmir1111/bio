@@ -56,11 +56,11 @@
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #888;
-            margin: 25px 0 15px;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin: 30px 0 12px;
             font-weight: 700;
         }
 
@@ -88,21 +88,21 @@
         .link-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--hover-shadow);
-            border-color: rgba(0,0,0,0.1);
         }
 
-        /* Особый стиль для кнопки Проекта */
+        /* Стиль для проектов (Черные кнопки) */
         .project-card {
             background: #000;
             color: #fff;
+            border: none;
         }
         
         .project-card:hover {
-            background: #1d1d1f;
+            background: #222;
         }
 
         .link-card i {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 8px;
         }
 
@@ -118,10 +118,12 @@
             font-family: monospace;
         }
 
+        /* Цвета брендов */
         .fa-telegram { color: #24A1DE; }
         .fa-tiktok { color: #000; }
         .fa-credit-card { color: #21a038; }
         .fa-ethereum { color: #627eea; }
+        .project-card i { color: #fff !important; } /* Иконки на проектах всегда белые */
 
         #copy-toast {
             visibility: hidden;
@@ -135,6 +137,7 @@
             bottom: 30px;
             font-size: 14px;
             z-index: 100;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         #copy-toast.show { visibility: visible; animation: fadeInUp 0.4s; }
@@ -142,11 +145,11 @@
         .footer {
             margin-top: 50px;
             font-size: 12px;
-            color: #888;
+            color: #aaa;
         }
 
         .footer a {
-            color: #000;
+            color: #555;
             text-decoration: none;
             font-weight: 600;
         }
@@ -156,13 +159,18 @@
 
     <div class="container">
         <img src="ava.png" alt="dqmjrka" class="profile-img">
+        
         <h1>dqmjrka</h1>
 
         <div class="section-title">Проекты</div>
         <div class="links-wrapper">
             <a href="https://esign.ttdq.pro" target="_blank" class="link-card project-card">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-terminal"></i>
                 <span>ESIGN</span>
+            </a>
+            <a href="https://sber.ttdq.pro" target="_blank" class="link-card project-card">
+                <i class="fas fa-university"></i>
+                <span>Сбер</span>
             </a>
         </div>
 
@@ -178,7 +186,7 @@
             </a>
         </div>
 
-        <div class="section-title">Поддержать</div>
+        <div class="section-title">Донат</div>
         <div class="links-wrapper">
             <div class="link-card" onclick="copyValue('2202206393709519', 'Карта скопирована!')">
                 <i class="fas fa-credit-card"></i>
